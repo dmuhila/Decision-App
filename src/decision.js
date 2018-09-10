@@ -17,10 +17,8 @@ const remove = () =>{
     titobj.options=[];
     deci();
 }
-
-render()
-{
-return (<div>
+const deci = () => {
+let title = <div>
     <h1>{titobj.title}</h1>
     {titobj.subtitle && <p>{titobj.subtitle}</p>}
     <p>{titobj.options.length>0 ? "options" : "no options"}</p>
@@ -37,8 +35,9 @@ return (<div>
       <input type="text" name="opt"/> 
       <button>Add option</button> 
     </form>
-    </div>)
+    </div>
 
-
-}
 ReactDOM.render(title,document.getElementById("app1"));
+}
+
+deci();

@@ -1,19 +1,21 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import Header from "./components/Header";
-import Action from "./components/Action";
-import AddOption from "./components/AddOption";
-import Options from "./components/Options";
+import React from 'react';
+import Header from './Header';
+import Action from './Action';
+import AddOption from './AddOption';
+import Options from './Options';
 import OptionModal from './OptionModal';
 
-class Indecision extends React.Component {
+export default class Indecision extends React.Component {
     constructor(props) {
         super(props);
         this.handleSelectOption = this.handleSelectOption.bind(this);
         this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
         this.handPick = this.handPick.bind(this);
         this.handleAddOption = this.handleAddOption.bind(this);
-        
+        this.state = {
+            options: [], //['1 thing',' 2 thing',' 3 thing']
+            selectOption: undefined 
+        }
     }
     handleSelectOption(){
         this.setState(() => ({selectOption : undefined}))
@@ -58,7 +60,3 @@ class Indecision extends React.Component {
         )
     }
 }
-
-
-ReactDOM.render(<Indecision />, document.getElementById("comp"));
-
